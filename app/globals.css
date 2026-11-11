@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #ffffff;
+  --bg-alt: #f4f5f7;
+  --card: #ffffff;
+  --line: #e4e6eb;
+  --ink: #141414;
+  --muted: #5f6673;
+  --accent: #123a5f;
+  --accent-hover: #0c2a45;
+  --saffron: #d6b36a;
+  --night: #1a1a1a;
+  --paper: #fafafa;
+}
+
+.dark {
+  --bg: #101012;
+  --bg-alt: #19191d;
+  --card: #1e1e24;
+  --line: #33333c;
+  --ink: #f6f6f7;
+  --muted: #b0b4be;
+  --accent: #8eb4d4;
+  --accent-hover: #b7d0e6;
+  --saffron: #e4c58a;
+  --night: #070708;
+  --paper: #f6f6f7;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-alt: var(--bg-alt);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-saffron: var(--saffron);
+  --color-night: var(--night);
+  --color-paper: var(--paper);
+  --font-sans: var(--font-dm);
+  --font-serif: var(--font-dm);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 8.5rem;
+}
+
+html[data-edition="haat"] .rounded-full,
+html[data-edition="haat"] .rounded-t-full {
+  border-radius: 0.7rem;
+}
+
+html[data-edition="haat"] .rounded-3xl,
+html[data-edition="haat"] .rounded-b-3xl {
+  border-radius: 1rem;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-dm), "Plus Jakarta Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-serif {
+  font-family: var(--font-dm), "Plus Jakarta Sans", sans-serif;
+  letter-spacing: -0.035em;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track,
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .animate-marquee {
+    animation: none;
+  }
+}
